@@ -1,13 +1,13 @@
 ﻿namespace Pizza
 {
-    class Cart
+    public class Cart
     {
 
-        Pizza[] Pizzas = new Pizza[10];
-        int itemCount = 0;
-        double totalPrice = 0;
+        PizzaItem[] Pizzas = new PizzaItem[10];
+        public int itemCount = 0;
+        public double totalPrice = 0;
 
-        public void AddToCart(Pizza newPizza)
+        public void AddToCart(PizzaItem newPizza)
         {
             this.itemCount++;
             this.Pizzas[itemCount - 1] = newPizza;
@@ -16,7 +16,7 @@
 
         public void RemoveFromCart(int index)
         {
-            Pizza newPizza = this.Pizzas[index];
+            PizzaItem newPizza = this.Pizzas[index];
             this.totalPrice -= newPizza.price;
             int count = index;
             while (count < this.itemCount - 1)
@@ -35,7 +35,7 @@
             return this.itemCount;
         }
 
-        public Pizza[] GetCartDetails()
+        public PizzaItem[] GetCartDetails()
         {
             return this.Pizzas;
         }

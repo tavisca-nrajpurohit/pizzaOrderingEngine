@@ -2,7 +2,7 @@
 
 namespace Pizza
 {
-    enum Topping
+    public enum Topping
     {
         Capsicum,
         Paneer,
@@ -13,21 +13,21 @@ namespace Pizza
         Mushrooms
     };
 
-    enum PizzaSize
+    public enum PizzaSize
     {
         small,
         medium,
         large
     };
 
-    class Pizza
+    public class PizzaItem
     {
         public Boolean isVeg;
         public Topping[] toppings;
         public PizzaSize size;
         public double price;
 
-        public Pizza(Boolean IsVeg, Topping[] Toppings, PizzaSize Size)
+        public PizzaItem(Boolean IsVeg, Topping[] Toppings, PizzaSize Size)
         {
             this.size = Size;
             this.toppings = Toppings;
