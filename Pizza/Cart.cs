@@ -9,9 +9,17 @@
 
         public void AddToCart(PizzaItem newPizza)
         {
-            this.itemCount++;
-            this.Pizzas[itemCount - 1] = newPizza;
-            this.totalPrice += newPizza.price;
+            if (this.itemCount < 10)
+            {
+                this.itemCount++;
+                this.Pizzas[itemCount - 1] = newPizza;
+                this.totalPrice += newPizza.price;
+            }
+            else
+            {
+                System.Console.WriteLine("Error: Can't add more items to cart!");
+            }
+
         }
 
         public void RemoveFromCart(int index)
